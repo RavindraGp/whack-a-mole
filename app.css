@@ -2,3 +2,44 @@
   height: 100%;
   width: 100%;
 }
+
+.toolbar {
+  display: grid;
+  grid-template-columns: auto auto;
+  background: antiquewhite;
+  padding: 10px;
+}
+.game-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 10px;
+  outline: none;
+}
+.dirt {
+  height: 100px;
+  width: 150px;
+  margin-top: 60px;
+  outline: none;
+  user-select: none;
+}
+.mole {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  visibility: hidden;
+  left: 24px;
+  outline: none;
+  user-select: none;
+}
+
+.box-container {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.active {
+  visibility: visible;
+}

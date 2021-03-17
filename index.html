@@ -4,17 +4,53 @@
     <title>Whack-A-Mole</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="app.css" />
   </head>
   <body>
     <script src="game.js"></script>
     <div class="main-container">
-      <div class="btn-controls">
-        <button>START</button>
-        <button>STOP</button>
-        <button>RESET</button>
+      <div class="toolbar">
+        <div class="btn-controls">
+          <button onclick="startGame()">START</button>
+          <button onclick="stopGame()">STOP</button>
+          <button onclick="resetGame()">RESET</button>
+        </div>
+        <div>Score <span id="score">0</span></div>
       </div>
-      <div>Score <span id="score">0</span></div>
-      <div class="game-container"></div>
+      <div class="game-container">
+        <div class="box-container">
+          <img class="mole" src="assets/mole.jpg" />
+          <img class="dirt" src="assets/dirt.jpg" />
+        </div>
+        <div class="box-container">
+          <img class="mole" src="assets/mole.jpg" />
+          <img class="dirt" src="assets/dirt.jpg" />
+        </div>
+        <div class="box-container">
+          <img class="mole" src="assets/mole.jpg" />
+          <img class="dirt" src="assets/dirt.jpg" />
+        </div>
+        <div class="box-container">
+          <img class="mole" src="assets/mole.jpg" />
+          <img class="dirt" src="assets/dirt.jpg" />
+        </div>
+        <div class="box-container">
+          <img class="mole" src="assets/mole.jpg" />
+          <img class="dirt" src="assets/dirt.jpg" />
+        </div>
+        <div class="box-container">
+          <img class="mole" src="assets/mole.jpg" />
+          <img class="dirt" src="assets/dirt.jpg" />
+        </div>
+        <div class="box-container">
+          <img class="mole" src="assets/mole.jpg" />
+          <img class="dirt" src="assets/dirt.jpg" />
+        </div>
+        <div class="box-container">
+          <img class="mole" src="assets/mole.jpg" />
+          <img class="dirt" src="assets/dirt.jpg" />
+        </div>
+      </div>
     </div>
   </body>
 </html>
