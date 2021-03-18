@@ -2,22 +2,31 @@ let score = 0;
 let interval;
 let countDownInterval;
 const totalTime = 2 * 1000 * 60;
-window.addEventListener("load", () => {
+window.addEventListener("load", function () {
   initGame();
 });
 
-initGame = () => {
-  document.querySelectorAll(".mole-new").forEach((element) => {
-    element.addEventListener("click", (event) => {
+function initGame() {
+  const nodeList = document.querySelectorAll(".mole-new");
+  for (let i = 0; i < nodeList.length; i++) {
+    nodeList[i].addEventListener("click", function (event) {
       if (event.target.classList.contains("active")) {
         score++;
         setScoreValue(score);
       }
     });
-  });
-};
+  }
+  // document.querySelectorAll(".mole-new").forEach(function(element){
+  //   element.addEventListener("click", (event) => {
+  //     if (event.target.classList.contains("active")) {
+  //       score++;
+  //       setScoreValue(score);
+  //     }
+  //   });
+  // });
+}
 
-startGame = () => {
+function startGame() {
   setCountDownValue("00:00");
   stopGame();
   countDownTimer();
@@ -25,15 +34,15 @@ startGame = () => {
   //     stopGame();
   //     alert("GAME OVER");
   //   }, totalTime);
-  interval = setInterval(() => {
-    const random = parseInt(Math.random() * 8);
+  interval = setInterval(function () {
+    const random = parseInt(Math.random() * 6);
     removeActiveClass();
     const moleElements = document.getElementsByClassName("mole-new");
     moleElements[random].classList.add("active");
   }, 700);
-};
+}
 
-stopGame = () => {
+function stopGame() {
   if (!!interval) {
     clearInterval(interval);
     clearInterval(countDownInterval);
@@ -41,37 +50,37 @@ stopGame = () => {
     countDownInterval = null;
     removeActiveClass();
   }
-};
+}
 
-resetGame = () => {
+function resetGame() {
   removeActiveClass();
   score = 0;
   stopGame();
   setScoreValue(0);
   setCountDownValue("00:00");
-};
+}
 
-removeActiveClass = () => {
+function removeActiveClass() {
   const boxes = document.getElementsByClassName("mole-new");
 
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].classList.remove("active");
   }
-};
+}
 
-setScoreValue = (score) => {
+function setScoreValue(score) {
   const scoreElement = document.getElementById("score");
   scoreElement.innerHTML = score;
-};
+}
 
-setCountDownValue = (count) => {
+function setCountDownValue(count) {
   document.getElementById("timeleft").innerHTML = count;
-};
+}
 
-countDownTimer = () => {
+function countDownTimer() {
   // Update the count down every 1 second
   let counter = 1000;
-  countDownInterval = setInterval(() => {
+  countDownInterval = setInterval(function () {
     var timeLeft = totalTime - counter;
 
     var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
@@ -85,4 +94,4 @@ countDownTimer = () => {
       stopGame();
     }
   }, 1000);
-};
+}
