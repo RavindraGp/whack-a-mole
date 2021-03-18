@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
 });
 
 initGame = () => {
-  document.querySelectorAll(".mole").forEach((element) => {
+  document.querySelectorAll(".mole-container").forEach((element) => {
     element.addEventListener("click", (event) => {
       if (event.target.classList.contains("active")) {
         score++;
@@ -28,7 +28,7 @@ startGame = () => {
   interval = setInterval(() => {
     const random = parseInt(Math.random() * 8);
     removeActiveClass();
-    const moleElements = document.getElementsByClassName("mole");
+    const moleElements = document.getElementsByClassName("mole-container");
     moleElements[random].classList.add("active");
   }, 700);
 };
@@ -52,7 +52,7 @@ resetGame = () => {
 };
 
 removeActiveClass = () => {
-  const boxes = document.getElementsByClassName("mole");
+  const boxes = document.getElementsByClassName("mole-container");
 
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].classList.remove("active");
