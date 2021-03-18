@@ -6,9 +6,11 @@
 .toolbar {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
   background: antiquewhite;
   padding: 10px;
 }
+
 .game-container {
   display: grid;
   align-items: center;
@@ -17,6 +19,7 @@
   column-gap: 10px;
   outline: none;
 }
+
 .dirt {
   height: 100%;
   width: 100%;
@@ -25,13 +28,13 @@
   outline: none;
   user-select: none;
 }
-.mole {
+/* .mole {
   height: 90px;
   width: 90px;
   position: absolute;
   visibility: hidden;
   left: 24px;
-}
+} */
 
 .mole-new {
   height: 100%;
@@ -56,4 +59,10 @@
 
 .active {
   visibility: visible;
+}
+
+.btn-controls {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 10px;
 }
