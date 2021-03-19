@@ -35,9 +35,9 @@ function startGame() {
   //     alert("GAME OVER");
   //   }, totalTime);
   interval = setInterval(function () {
-    const random = parseInt(Math.random() * 6);
-    removeActiveClass();
     const moleElements = document.getElementsByClassName("mole-new");
+    const random = parseInt(Math.random() * moleElements.length);
+    removeActiveClass();
     moleElements[random].classList.add("active");
   }, 700);
 }

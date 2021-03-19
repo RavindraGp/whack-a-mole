@@ -1,60 +1,56 @@
+body {
+  margin: 0;
+  font-family: cursive;
+}
+
 .main-container {
   height: 100%;
   width: 100%;
 }
 
 .toolbar {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background: antiquewhite;
   padding: 10px;
 }
 
 .game-container {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 10px;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.box-container {
+  position: relative;
+  display: inline-block;
+  width: 20vw;
+  margin-top: 70px;
+}
+
+.mole-container {
+  height: 100px;
+  position: absolute;
+  top: -64px;
+}
+
+.mole-new {
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
   outline: none;
+  user-select: none;
 }
 
 .dirt {
   height: 100%;
   width: 100%;
-  /* margin-top: 40px; */
   object-fit: contain;
   outline: none;
   user-select: none;
-}
-/* .mole {
-  height: 90px;
-  width: 90px;
-  position: absolute;
-  visibility: hidden;
-  left: 24px;
-} */
-
-.mole-new {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  outline: none;
-  user-select: none;
-}
-
-.mole-container {
-  height: 100%;
-  width: 100%;
-  visibility: hidden;
-}
-
-.box-container {
-  position: relative;
-  display: grid;
-  /* grid-template-rows: auto auto; */
-  grid-template-columns: 0.5fr;
 }
 
 .active {
@@ -62,7 +58,5 @@
 }
 
 .btn-controls {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 10px;
+  display: flex;
 }
